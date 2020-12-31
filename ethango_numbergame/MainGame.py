@@ -76,11 +76,33 @@ class Game:
         """
         current_player = self.list_players[self.counter]
         guess = int(input("Enter your number player {player_num}".format(player_num = self.counter + 1)))
+
+        # If guess is correct
         if(guess == self.number):
-            print("Congratulations! You guessed the correct number. We will now initialize a different number")
+            current_player.add_score(100)
+            print("Congratulations! You guessed the correct number. Player {name} has a score of {score}. We will now initialize a different number".format(name = current_player.name,score=current_player.score))
+        
+        # Procedure if incorrect
         else:
             if(guess > self.number):
                 print("Your guess was incorrect, it is lower")
             elif(guess < self.number):
                 print("Your guess was incorrect, it is higher")
 
+        # If the counter is greater than num of players, reset back to 0
+        if((self.counter + 1) > self.num_players - 1):
+            self.counter = 0
+        else:
+            self.counter += 1
+
+    def show_score(self):
+        """
+        A function that is used to show the score of all the players
+        Input
+            None
+
+        Output
+            None
+        """
+        for player in self.list_players:
+            print("Player {name} has a score of {score}".format(name = player.name, score = player.score))
