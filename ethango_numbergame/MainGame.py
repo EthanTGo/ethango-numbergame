@@ -44,8 +44,8 @@ class Game:
                 list_players: A list of players
         """
         list_players = []
-        for _ in range(num_players):
-            name = input("Enter your name")
+        for num in range(num_players):
+            name = input("Enter your name player {player_num}: ".format(player_num = num))
             list_players.append(Player(name))
         self.list_players = list_players
         return list_players
@@ -75,7 +75,7 @@ class Game:
                 None
         """
         current_player = self.list_players[self.counter]
-        guess = int(input("Enter your number player {player_num}".format(player_num = self.counter + 1)))
+        guess = int(input("Enter your number player {player_num} ".format(player_num = self.counter + 1)))
 
         # If guess is correct
         if(guess == self.number):
