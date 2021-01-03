@@ -8,7 +8,7 @@ The basic purpose of this project is to create a simple game and practice good O
 
 # Getting started 
 
-This project should be uploaded on the PyPi. To install it simply do...
+This project should be uploaded on the PyPi. To install it simply do ```pip install ethango-numbergame```
 
 To run the files on the repository, you would need to install pytest for the test file. Installation for pytest can be found <a href="https://docs.pytest.org/en/stable/getting-started.html">here</a>: !
 
